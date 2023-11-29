@@ -3,7 +3,6 @@ import java.io.File;
 import java.io.FileWriter;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
-import java.util.Scanner;
 
 import mmodelo.Convidado;
 import mmodelo.Evento; 
@@ -107,9 +106,7 @@ public class Repositorio {
 			throw new RuntimeException("criacao dos arquivos vazios:"+ex.getMessage());
 		}
 
-		String linha;	
-		String[] partes;
-
+		
 
 	}
 

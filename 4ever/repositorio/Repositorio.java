@@ -1,7 +1,6 @@
 package repositorio;
 import java.io.File;
 import java.io.FileWriter;
-import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 
 import mmodelo.Convidado;
@@ -119,7 +118,7 @@ public class Repositorio {
 			
 			for(Evento e : eventos){
 
-				String dataFormatada = e.getData().format(DateTimeFormatter.ofPattern("dd/MM/yyyy"));
+				String dataFormatada = e.getData();
 
 				arquivo1.write(	
 								e.getId()+";"+
@@ -147,7 +146,7 @@ public class Repositorio {
 
 				Convidado c = (Convidado) p;
 
-				String dataFormatada = p.getNascimento().format(DateTimeFormatter.ofPattern("dd/MM/yyyy"));
+				String dataFormatada = p.getNascimento();
 				arquivo2.write(	
 								c.getCpf() + ";" +
 								dataFormatada + ";" +
@@ -155,7 +154,7 @@ public class Repositorio {
 						"\n");	
 			}
 			else {
-				String dataFormatada = p.getNascimento().format(DateTimeFormatter.ofPattern("dd/MM/yyyy"));
+				String dataFormatada = p.getNascimento();
 				arquivo2.write(	
 								p.getCpf() + ";" +
 								dataFormatada + ";" + "\n");	

@@ -2,6 +2,7 @@ package mmodelo;
 
 import java.time.LocalDate;
 import java.time.Period;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 
 public class Participante {
@@ -20,11 +21,11 @@ public class Participante {
 		this.cpf = cpf;
 	}
 
-	public LocalDate getNascimento() {
+	public String getNascimento() {
 		return nascimento;
 	}
 
-	public void setNascimento(LocalDate nascimento) {
+	public void setNascimento(String nascimento) {
 		this.nascimento = nascimento;
 	}
 
@@ -37,11 +38,11 @@ public class Participante {
 	}
 
 	private String cpf ;
-	private LocalDate nascimento;
+	private String nascimento;
 	private ArrayList<Ingresso> Ingressos ;
 	
 	
-	public Participante (String cpf,LocalDate nascimento) {
+	public Participante (String cpf,String nascimento) {
 		
 		this.cpf = cpf;
 		this.nascimento = nascimento;
@@ -49,9 +50,13 @@ public class Participante {
 	}
 	
 	public int calcularIdade() {
+
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+		
+		LocalDate dataNascimento = LocalDate.parse(nascimento, formatter);
 		
 		LocalDate dataAtual = LocalDate.now();
-		return Period.between(nascimento, dataAtual).getYears();
+		return Period.between(dataNascimento, dataAtual).getYears();
 		
 	}
 

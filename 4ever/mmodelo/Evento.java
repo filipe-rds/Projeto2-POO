@@ -1,17 +1,16 @@
 package mmodelo;
-import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class Evento {
 	private int id;
-	private LocalDate data;
+	private String data;
 	private String descricao;
 	private int capacidade ;
 	private double preco;
 	private ArrayList<Ingresso> Ingressos;
 	
 	
-	public Evento(LocalDate data,String descricao,int capacidade,double preco) {
+	public Evento(String data,String descricao,int capacidade,double preco) {
 		// this.id = método
 		this.data = data;
 		this.descricao = descricao;
@@ -42,13 +41,13 @@ public class Evento {
 
 
 
-	public LocalDate getData() {
+	public String getData() {
 		return data;
 	}
 
 
 
-	public void setData(LocalDate data) {
+	public void setData(String data) {
 		this.data = data;
 	}
 

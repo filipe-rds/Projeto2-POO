@@ -82,7 +82,18 @@ public class Repositorio {
 	
 	public int gerarId() {
 		
-		return eventos.size() +1;
+		int valor =  eventos.size() ;  
+
+		if (valor == 0) {
+			    return 1;
+		}
+		else {
+
+				Evento eventoTeste = eventos.get(valor - 1);
+				int valor1 = eventoTeste.getId() ;
+				return valor1 + 1;
+
+		}
 		
 	}
 

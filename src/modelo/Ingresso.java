@@ -79,9 +79,11 @@ public class Ingresso {
 	
 	@Override
 	public String toString() {
-		return "Ingresso [codigo=" + codigo + ", telefone=" + telefone + ", evento=[" + evento.getCapacidade()+"," + evento.getData()+
-				  "," + evento.getId() + "," + evento.getPreco() + "]"+
-				 ", participante=[" + participante.getCpf() + "," + participante.getNascimento() + "]"; 
+		return "Ingresso [codigo=" + codigo + ", telefone=" + telefone + ", Evento=[ capacidade=" + evento.getCapacidade()+", data=" + evento.getData()+
+				  ",id=" + evento.getId() + ", preço=" + evento.getPreco() + "]"+
+				 ", Participante [cpf=" + participante.getCpf() + ", nascimento=" + participante.getNascimento() + "]"; 
+
+				 
 	//}
 }
 

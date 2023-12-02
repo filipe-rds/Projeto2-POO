@@ -91,9 +91,18 @@ public class Evento {
 	}
 	
 	@Override
+
 	public String toString() {
-		return "Evento [id=" + id + ", data=" + data + ", descricao=" + descricao + ", capacidade=" + capacidade
-				+ ", preco=" + preco + ", Ingressos=" + Ingressos + "]";
-	}
+		
+		StringBuilder ingressosStr = new StringBuilder();
+		
+		for (Ingresso ingresso : Ingressos) {
+			ingressosStr.append(String.format(" [código=%s, telefone=%s], ", ingresso.getCodigo(), ingresso.getTelefone()));
+		}
+
+    return String.format("Evento [id=%s, data=%s, descricao=%s, capacidade=%s, preco=%s, Ingressos=%s]",
+            id, data, descricao, capacidade, preco, ingressosStr.toString());
+}
+
 
 }

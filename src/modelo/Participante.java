@@ -58,8 +58,22 @@ public class Participante {
 	
 	@Override
 	public String toString() {
-		return "Participante [cpf=" + cpf + ", nascimento=" + nascimento + ", Ingressos=" + Ingressos + "]";
-	}
+    StringBuilder ingressosStr = new StringBuilder();
+
+    if (Ingressos != null && !Ingressos.isEmpty()) {
+        ingressosStr.append("Ingressos [");
+        for (Ingresso ingresso : Ingressos) {
+            ingressosStr.append(String.format("código=%s, telefone=%s; ", ingresso.getCodigo(), ingresso.getTelefone()));
+        }
+        ingressosStr.setLength(ingressosStr.length() - 2);  // Remover a última vírgula e espaço
+        ingressosStr.append("]");
+    } else {
+        ingressosStr.append("null");
+    }
+
+    return String.format("Participante [cpf=%s, nascimento=%s, %s]", cpf, nascimento, ingressosStr.toString());
+}
+
 
 
 }

@@ -273,7 +273,7 @@ public class Fachada{
 			ArrayList<Ingresso> i = repositorio.getIngressos();
 
 			if ( i.size() == 0){
-				throw new Exception("Não existe nenhum evento cadastrado");
+				throw new Exception("Não existe nenhum ingresso cadastrado");
 			}
 
 			return i;

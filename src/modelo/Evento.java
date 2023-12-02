@@ -86,7 +86,7 @@ public class Evento {
 		
 	}
 	
-	public double totaArrecadado() {
+	public double totalArrecadado() {
 		return preco * Ingressos.size();
 	}
 	
